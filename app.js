@@ -20,6 +20,7 @@ class KanjiQuiz {
     this.kanjis = kanjis;
     this.sound = sound;
     this.soundEnabled = true;
+    this.questionType = 0;
     this.correct = 0;
     this.incorrect = 0;
 
@@ -33,6 +34,8 @@ class KanjiQuiz {
       this.options = this.kanjis.getRandomKanjis(4);
       this.answer = this.options[Math.floor(this.options.length * Math.random())];
     } while (this.answer === prev);
+
+    this.questionType = Math.floor(Math.random() * 2);
   }
 
   answerQuestion(kanji) {
@@ -54,7 +57,7 @@ class KanjiQuiz {
 
   playSound(fn) {
     if (this.soundEnabled) {
-      this.sound.play('/deps/audio/' + fn);
+      this.sound.play('deps/audio/' + fn);
     }
   }
 
