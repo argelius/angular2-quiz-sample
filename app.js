@@ -54,7 +54,7 @@ class KanjiQuiz {
 
   playSound(fn) {
     if (this.soundEnabled) {
-      this.sound.play('/deps/audio/' + fn);
+      this.sound.play('deps/audio/' + fn);
     }
   }
 
