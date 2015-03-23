@@ -1,0 +1,52 @@
+<style>
+  @import "deps/css/onsen-css-components.css";
+
+  #options {
+    text-align: center;
+  }
+
+  #options > .button {
+    width: 90%;
+    margin: 4px;
+  }
+</style>
+
+<div class="page">
+  <div class="navigation-bar">
+
+    <div class="navigation-bar__left">
+      <span class="toolbar-button--quiet navigation-bar__line-height">
+        <i class="ion-navicon" style="font-size:32px; vertical-align:-6px;"></i>
+      </span>
+    </div>
+
+    <div class="navigation-bar__center">
+      Kanji Quiz
+    </div>
+
+    <div class="navigation-bar__right">
+      <span class="toolbar-button--quiet navigation-bar__line-height">
+        <span (click)="toggleSound()" [hidden]="soundEnabled">Sound</span>
+        <span (click)="toggleSound()" [hidden]="!soundEnabled">No sound</span>
+      </span>
+    </div>
+  </div>
+
+  <h1 style="text-align: center;">{{ answer.kanji }}</h1>
+
+  <div id="options">
+    <button
+      *foreach="#option in options"
+      class="button"
+      (click)="answerQuestion(option)">
+      {{ option.meanings.join(', ') }}
+    </button>
+  </div>
+
+  <div class="bottom-bar">
+    <div class="bottom-bar__line-height" style="text-align:center">
+      Correct: {{ correct }} Incorrect: {{ incorrect }} <span [hidden]="correct + incorrect == 0">({{ percentage() }}%)</span>
+    </div>
+  </div>
+
+</div>

@@ -1,6 +1,6 @@
-# Angular 2 Todo App
+# Angular 2 Kanji Quiz App
 
-Angular 2 is not packaged or ready for production... but this is a todo app with it.
+This was forked from David East's [Angular2 Todo App](https://github.com/davideast/ng2do).
 
 ### Installation
 
@@ -14,10 +14,6 @@ gulp serve
 ### How the installation works
 
 The installation clones the [Angular 2 quickstart](https://github.com/angular/quickstart) which contains Angular and all of the dependencies to transpile from AtScript/TypeScript. The local .git folder for the quickstart is removed automatically.
-
-### AngularFire?
-
-The AngularFire included in this project is not a final or working version of AngularFire for Angular 2.
 
 ### I want more Angular 2 info
 

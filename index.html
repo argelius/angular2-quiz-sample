@@ -1,25 +1,24 @@
 <!doctype html>
 <html>
 <head>
-  <title>ng2do</title>
-  <link rel="stylesheet" href="deps/css/main.css" media="screen" title="no title" charset="utf-8">
+  <title>Kanji Quiz</title>
+  <link rel="stylesheet" href="deps/css/onsen-css-components.css" media="screen" title="no title" charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-  <todo-app>Loading...</todo-app>
+  <kanji-quiz>Loading...</kanji-quiz>
 
-  <script src="/deps/firebase/firebase.js"></script>
   <script src="/quickstart/dist/es6-shim.js"></script>
 
   <script>
     System.paths = {
       'angular2/*':'quickstart/angular2/*.js', // Angular
       'rtts_assert/*': 'quickstart/rtts_assert/*.js', //Runtime assertions
-      'todo': 'todo.js',
-      'firebase/*': 'deps/firebase/*.js',
+      'app': 'app.js',
       'services/*': 'deps/services/*.js'
     };
 
-    System.import('todo').then(function(module) {
+    System.import('app').then(function(module) {
       module.main();
     }, console.log.bind(console));
   </script>
