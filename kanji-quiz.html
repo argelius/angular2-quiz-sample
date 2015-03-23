@@ -33,19 +33,19 @@
   </div>
 
   <div style="text-align: center;" [hidden]="!showAnswer">
-    <h1>{{ answer.kanji }}</h1>
-    <h1>{{ answer.meanings.join(', ') }}</h1>
+    <h2>{{ answer.kanji }}</h2>
+    <h2>{{ answer.meanings.join(', ') }}</h2>
 
     <button
       class="button"
       (click)="nextQuestion()">Got it!</button>
   </div>
 
-  <div [hidden]="showAnswer">
-    <h1 style="text-align: center; height: 40px;">
+  <div style="text-align: center;" [hidden]="showAnswer">
+    <h2>
       <span [hidden]="questionType == 0">{{ answer.kanji }}</span>
       <span [hidden]="questionType == 1">{{ answer.meanings.join(', ') }}</span>
-    </h1>
+    </h2>
 
     <div id="options">
       <button
