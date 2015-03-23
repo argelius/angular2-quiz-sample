@@ -23,11 +23,13 @@ class KanjiQuiz {
     this.questionType = 0;
     this.correct = 0;
     this.incorrect = 0;
+    this.showAnswer = false;
 
     this.nextQuestion();
   }
 
   nextQuestion() {
+    this.showAnswer = false;
     var prev = this.answer;
 
     do {
@@ -42,13 +44,13 @@ class KanjiQuiz {
     if (kanji === this.answer) {
       this.playSound('correct.wav');
       this.correct++;
+      this.nextQuestion();
     }
     else {
       this.playSound('incorrect.wav');
+      this.showAnswer = true;
       this.incorrect++;
     }
-
-    this.nextQuestion();
   }
 
   toggleSound() {
