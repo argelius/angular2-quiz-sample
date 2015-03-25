@@ -1,5 +1,7 @@
 # Angular 2 Kanji Quiz App
 
+[Check it out here!](http://argelius.github.io/angular2-quiz-sample/)
+
 This was forked from David East's [Angular2 Todo App](https://github.com/davideast/ng2do).
 
 ### Installation
