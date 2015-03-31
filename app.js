@@ -1,6 +1,5 @@
 import {Component, Template, bootstrap, Foreach} from 'angular2/angular2';
 import {Kanjis} from 'services/Kanjis';
-import {Sound} from 'services/Sound';
 
 @Component({
   selector: 'kanji-quiz',
