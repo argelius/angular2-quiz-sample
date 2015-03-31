@@ -5,8 +5,7 @@ import {Sound} from 'services/Sound';
 @Component({
   selector: 'kanji-quiz',
   componentServices: [
-    Kanjis,
-    Sound
+    Kanjis
   ]
 })
 
@@ -16,10 +15,8 @@ import {Sound} from 'services/Sound';
 })
 
 class KanjiQuiz {
-  constructor(kanjis: Kanjis, sound: Sound) {
+  constructor(kanjis: Kanjis) {
     this.kanjis = kanjis;
-    this.sound = sound;
-    this.soundEnabled = true;
     this.questionType = 0;
     this.correct = 0;
     this.incorrect = 0;
@@ -42,24 +39,12 @@ class KanjiQuiz {
 
   answerQuestion(kanji) {
     if (kanji === this.answer) {
-      this.playSound('correct.wav');
       this.correct++;
       this.nextQuestion();
     }
     else {
-      this.playSound('incorrect.wav');
       this.showAnswer = true;
       this.incorrect++;
-    }
-  }
-
-  toggleSound() {
-    this.soundEnabled = !this.soundEnabled;
-  }
-
-  playSound(fn) {
-    if (this.soundEnabled) {
-      this.sound.play('deps/audio/' + fn);
     }
   }
 
